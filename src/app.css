@@ -1,46 +1,32 @@
 :root {
-  --bg: #f7f7f8;
-  --surface: #ffffff;
-  --surface-2: #f1f1f3;
-  --border: #e3e3e8;
-  --border-strong: #cfcfd6;
-  --text: #18181b;
-  --text-2: #52525b;
-  --text-3: #71717a;
-  --accent: #047857;
-  --accent-strong: #065f46;
-  --accent-soft: #ecfdf5;
-  --accent-text: #ffffff;
-  --error: #b91c1c;
-  --error-soft: #fef2f2;
-  --warning: #92400e;
-  --warning-soft: #fffbeb;
+  --bg: light-dark(#f7f7f8, #0e0e10);
+  --surface: light-dark(#ffffff, #17171a);
+  --surface-2: light-dark(#f1f1f3, #202024);
+  --border: light-dark(#e3e3e8, #2a2a30);
+  --border-strong: light-dark(#cfcfd6, #3a3a42);
+  --text: light-dark(#18181b, #f4f4f5);
+  --text-2: light-dark(#52525b, #b4b4bc);
+  --text-3: light-dark(#71717a, #8b8b94);
+  --accent: light-dark(#047857, #34d399);
+  --accent-strong: light-dark(#065f46, #6ee7b7);
+  --accent-soft: light-dark(#ecfdf5, #0b2a20);
+  --accent-text: light-dark(#ffffff, #052e22);
+  --error: light-dark(#b91c1c, #f87171);
+  --error-soft: light-dark(#fef2f2, #2a1214);
+  --warning: light-dark(#92400e, #fbbf24);
+  --warning-soft: light-dark(#fffbeb, #2a2010);
   --radius: 12px;
   --radius-sm: 8px;
   --font: 'Inter Variable', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  color-scheme: light dark;
+}
+
+:root[data-theme='light'] {
   color-scheme: light;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg: #0e0e10;
-    --surface: #17171a;
-    --surface-2: #202024;
-    --border: #2a2a30;
-    --border-strong: #3a3a42;
-    --text: #f4f4f5;
-    --text-2: #b4b4bc;
-    --text-3: #8b8b94;
-    --accent: #34d399;
-    --accent-strong: #6ee7b7;
-    --accent-soft: #0b2a20;
-    --accent-text: #052e22;
-    --error: #f87171;
-    --error-soft: #2a1214;
-    --warning: #fbbf24;
-    --warning-soft: #2a2010;
-    color-scheme: dark;
-  }
+:root[data-theme='dark'] {
+  color-scheme: dark;
 }
 
 *,
@@ -194,25 +180,12 @@ select {
 
 /* Categorical chart palette (dataviz reference, validated order). */
 :root {
-  --series-1: #2a78d6;
-  --series-2: #eb6834;
-  --series-3: #1baf7a;
-  --series-4: #eda100;
-  --series-5: #e87ba4;
+  --series-1: light-dark(#2a78d6, #3987e5);
+  --series-2: light-dark(#eb6834, #d95926);
+  --series-3: light-dark(#1baf7a, #199e70);
+  --series-4: light-dark(#eda100, #c98500);
+  --series-5: light-dark(#e87ba4, #d55181);
   --series-6: #008300;
-  --series-7: #4a3aa7;
-  --series-8: #e34948;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --series-1: #3987e5;
-    --series-2: #d95926;
-    --series-3: #199e70;
-    --series-4: #c98500;
-    --series-5: #d55181;
-    --series-6: #008300;
-    --series-7: #9085e9;
-    --series-8: #e66767;
-  }
+  --series-7: light-dark(#4a3aa7, #9085e9);
+  --series-8: light-dark(#e34948, #e66767);
 }

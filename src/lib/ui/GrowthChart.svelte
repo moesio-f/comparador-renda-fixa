@@ -22,20 +22,14 @@
   } from 'chart.js';
   import { toDayNumber } from '../data/business-days';
   import { formatCurrency, formatDate } from '../format';
+  import { theme } from '../state/theme.svelte';
 
   Chart.register(LineController, LineElement, PointElement, LinearScale, Tooltip, Legend);
 
   let { series }: { series: Series[] } = $props();
 
   let canvas: HTMLCanvasElement;
-  let dark = $state(matchMedia('(prefers-color-scheme: dark)').matches);
-
-  $effect(() => {
-    const mq = matchMedia('(prefers-color-scheme: dark)');
-    const onChange = () => (dark = mq.matches);
-    mq.addEventListener('change', onChange);
-    return () => mq.removeEventListener('change', onChange);
-  });
+  let probe: HTMLSpanElement;
 
   const DAY_MS = 86_400_000;
   const monthFormat = new Intl.DateTimeFormat('pt-BR', { month: 'short', year: '2-digit', timeZone: 'UTC' });
@@ -47,9 +41,12 @@
   });
 
   $effect(() => {
-    void dark; // Rebuild with the other theme's colors.
-    const css = getComputedStyle(document.documentElement);
-    const token = (name: string) => css.getPropertyValue(name).trim();
+    void theme.current; // Rebuild with the other theme's colors.
+    // Tokens hold light-dark() pairs, which canvas can't parse; resolve them through an element.
+    const token = (name: string) => {
+      probe.style.color = `var(${name})`;
+      return getComputedStyle(probe).color;
+    };
 
     const xs = series.flatMap((s) => s.points.map((p) => toDayNumber(p.date) * DAY_MS));
 
@@ -131,6 +128,7 @@
     <canvas bind:this={canvas} aria-label="Gráfico do valor líquido de cada ativo, mês a mês, até o vencimento"
     ></canvas>
   </div>
+  <span bind:this={probe} hidden></span>
 </figure>
 
 <style>

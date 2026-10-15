@@ -3,6 +3,7 @@
   import { app } from './lib/state/app.svelte';
   import { market } from './lib/state/market.svelte';
   import { href, router, type Route } from './lib/state/router.svelte';
+  import { theme } from './lib/state/theme.svelte';
   import IndicatorBar from './lib/ui/IndicatorBar.svelte';
   import Breakeven from './pages/Breakeven.svelte';
   import Comparator from './pages/Comparator.svelte';
@@ -59,6 +60,21 @@
         <a href={href(item.route)} aria-current={router.route === item.route ? 'page' : undefined}>{item.label}</a>
       {/each}
     </nav>
+    <button
+      class="btn theme"
+      onclick={() => theme.toggle()}
+      aria-label={theme.current === 'dark' ? 'Usar tema claro' : 'Usar tema escuro'}
+      title={theme.current === 'dark' ? 'Usar tema claro' : 'Usar tema escuro'}
+    >
+      <svg viewBox="0 0 24 24" width="18" height="18" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        {#if theme.current === 'dark'}
+          <circle cx="12" cy="12" r="4" />
+          <path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41" />
+        {:else}
+          <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z" />
+        {/if}
+      </svg>
+    </button>
     <button class="btn" onclick={copyLink}>Copiar link</button>
   </div>
 </header>
@@ -154,6 +170,10 @@
   nav a[aria-current='page'] {
     color: var(--text);
     background: var(--surface-2);
+  }
+
+  .theme {
+    padding: 6px 9px;
   }
 
   main.inner {

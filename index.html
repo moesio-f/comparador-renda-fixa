@@ -5,6 +5,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Compare CDB, LCI, LCA, CRI, CRA, debêntures e Tesouro Direto pelo rendimento líquido." />
     <title>Calculadora de Renda Fixa</title>
+    <script>
+      // Apply the stored theme before first paint. Key and format match src/lib/state/theme.svelte.ts.
+      try {
+        var theme = JSON.parse(localStorage.getItem('renda-fixa:theme')).value;
+        if (theme === 'light' || theme === 'dark') document.documentElement.dataset.theme = theme;
+      } catch (e) {}
+    </script>
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' rx='8' fill='%23059669'/><path d='M8 22l6-6 4 4 6-8' stroke='white' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/></svg>" />
   </head>
   <body>
