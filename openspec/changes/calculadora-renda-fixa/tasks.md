@@ -49,4 +49,4 @@
 - [x] 6.1 Search the UI strings for em dashes and English leftovers; review the copy for repetition
 - [x] 6.2 Check that the production bundle stays under 150 KB gzipped
 - [x] 6.3 Add the GitHub Actions workflow: typecheck, test, build, upload and deploy to Pages
-- [ ] 6.4 Enable Pages with the "GitHub Actions" source, push, and verify the live site fetches BCB, Focus and BrasilAPI data from `moesiof.github.io`
+- [ ] 6.4 Enable Pages with the "GitHub Actions" source, push, and verify the live site fetches BCB, Focus and BrasilAPI data from `moesio-f.github.io`

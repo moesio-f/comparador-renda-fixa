@@ -4,7 +4,7 @@ The user compares Brazilian fixed-income assets in a personal Google Sheet: net-
 
 ## What Changes
 
-- New static single-page app, all UI text in Brazilian Portuguese, built with Svelte + Vite + TypeScript and deployed to GitHub Pages (`moesiof.github.io/comparador-renda-fixa`).
+- New static single-page app, all UI text in Brazilian Portuguese, built with Svelte + Vite + TypeScript and deployed to GitHub Pages (`moesio-f.github.io/comparador-renda-fixa`).
 - Calculation engine for CDB, LCI, LCA, LIG, LF, CRI, CRA, DEB (comum and incentivada) and Tesouro Direto, with Pré, % do CDI, CDI +, IPCA + and Selic + indexers. It applies the regressive IR table, IOF for redemptions under 30 days and B3 custódia for Tesouro.
 - Market indicators fetched from BCB SGS (CDI, Selic, IPCA) and Focus (IPCA expectations per year), each one editable by hand.
 - Business-day calendar from BrasilAPI holidays, with a 252/365 approximation as fallback. The UI states which method each result used.
