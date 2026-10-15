@@ -13,7 +13,7 @@ As calculadoras conhecidas pedem e-mail, exigem login ou registram o que você d
 - Sem cadastro, sem cookies e sem ferramentas de analytics.
 - Seus ativos ficam salvos só no `localStorage` do seu navegador.
 - O link de compartilhamento guarda a comparação depois do `#` da URL. Essa parte nunca é enviada ao servidor.
-- O app não tem servidor próprio. O GitHub Pages entrega os arquivos estáticos, e o navegador busca os dados direto da fonte.
+- O app não tem servidor próprio. O GitHub Pages entrega os arquivos estáticos, tipografia incluída, e o navegador busca os dados direto do Banco Central e da BrasilAPI.
 
 Os únicos acessos externos são:
 
@@ -21,7 +21,6 @@ Os únicos acessos externos são:
 |---|---|
 | `api.bcb.gov.br` e `olinda.bcb.gov.br` | CDI, Selic, IPCA e projeções do Focus (Banco Central) |
 | `brasilapi.com.br` | Feriados nacionais, para contar dias úteis |
-| `fonts.googleapis.com` | Fonte Inter |
 
 Se alguma fonte falhar, você pode digitar os valores à mão.
 
